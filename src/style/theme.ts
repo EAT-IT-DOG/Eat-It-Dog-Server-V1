@@ -13,6 +13,6 @@ export const darkTheme: DefaultTheme = {
   ...palette,
 
   backgroundColor: "#181818",
-  subBackgroundColor: "#434343",
+  subBackgroundColor: "#202020",
   contrast: "#ffffff",
 };
