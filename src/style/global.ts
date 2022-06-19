@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -9,4 +10,12 @@ const GlobalStyle = createGlobalStyle`
       font-family: 'Pretendard-Regular' !important;
     }
 
+    button {
+        outline: none;
+        cursor: pointer;
+    }
+
+    ${reset}
 `;
+
+export default GlobalStyle;
