@@ -22,7 +22,7 @@ export const NavBarSectionWrap = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 30px;
   margin-top: 126px;
 `;
 
