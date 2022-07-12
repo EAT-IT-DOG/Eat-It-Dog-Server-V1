@@ -10,4 +10,5 @@ export const HomeContainer = styled.div`
 export const HomeBottomWrap = styled.div`
   display: flex;
   margin-top: 50px;
+  column-gap: 50px;
 `;

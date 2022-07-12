@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ellipsisLine } from "../../../../style/libStyle";
+import { widthOverflowEllipsisLine } from "../../../../style/libStyle";
 
 export const HomeFoodRankItemContainer = styled.div`
   width: 140px;
@@ -8,7 +8,6 @@ export const HomeFoodRankItemContainer = styled.div`
   display: flex;
   align-items: center;
   column-gap: 20px;
-  /* ${ellipsisLine(1)} */
 `;
 
 export const HomeFoodRankItemRank = styled.h1`
@@ -18,7 +17,9 @@ export const HomeFoodRankItemRank = styled.h1`
 `;
 
 export const HomeFoodRankItemContent = styled.p`
+  width: 100%;
   font-size: 14px;
   color: ${({ theme }) => theme.contrast};
   text-align: start;
+  ${widthOverflowEllipsisLine}
 `;
