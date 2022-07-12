@@ -7,4 +7,5 @@ export const ProfileBarContainer = styled.div`
   background-color: ${({ theme }) => theme.subBackgroundColor};
   display: flex;
   flex-direction: column;
+  z-index: 2;
 `;

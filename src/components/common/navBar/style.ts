@@ -9,6 +9,7 @@ export const NavBarContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 2;
   padding: 95px 0px;
 `;
 
@@ -22,7 +23,7 @@ export const NavBarSectionWrap = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 30px;
   margin-top: 126px;
 `;
 

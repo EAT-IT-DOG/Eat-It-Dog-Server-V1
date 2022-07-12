@@ -6,3 +6,9 @@ export const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+export const HomeBottomWrap = styled.div`
+  display: flex;
+  margin-top: 50px;
+  column-gap: 50px;
+`;
