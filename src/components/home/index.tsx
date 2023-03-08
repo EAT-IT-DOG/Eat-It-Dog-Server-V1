@@ -1,7 +1,7 @@
-import HomeFoodCarousel from "./homeFoodCarousel";
-import HomeFoodRank from "./homeFoodRank";
-import HomeFoodRecommend from "./homeFoodRecommend";
-import HomePanel from "./homePanel";
+import HomeFoodCarousel from "./HomeFoodCarousel";
+import HomeFoodRank from "./HomeFoodRank";
+import HomeFoodRecommend from "./HomeFoodRecommend";
+import HomePanel from "./HomePanel";
 import { HomeBottomWrap, HomeContainer } from "./style";
 
 const Home = () => {

@@ -2,9 +2,9 @@ import { StrictMode } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
-import App from "./components/app";
-import PageTemplate from "./components/common/pageTemplate";
-import ThemeProviderContainer from "./components/common/themeProviderContainer";
+import App from "./components/App";
+import PageTemplate from "./components/Common/PageTemplate";
+import ThemeProviderContainer from "./components/Common/ThemeProviderContainer";
 
 const queryClient = new QueryClient();
 
@@ -15,6 +15,8 @@ const Root = () => {
         <RecoilRoot>
           <ThemeProviderContainer>
             <BrowserRouter>
+              <div id="dialog" />
+              <div id="modal" />
               <PageTemplate>
                 <App />
               </PageTemplate>

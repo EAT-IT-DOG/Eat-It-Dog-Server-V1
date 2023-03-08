@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
-import DarkmodeButton from "../darkmodeButton";
-import NavBar from "../navBar";
-import ProfileBar from "../profileBar";
-import SearchBar from "../searchBar";
+import DarkmodeButton from "../DarkmodeButton";
+import NavBar from "../NavBar";
+import ProfileBar from "../ProfileBar";
+import SearchBar from "../SearchBar";
 import {
   PageTemplateContaier,
   PageTemplateHeaderWrap,
