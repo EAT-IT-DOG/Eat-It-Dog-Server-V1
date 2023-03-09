@@ -8,6 +8,7 @@ export const Background = styled.div`
   top: 0px;
   left: 0px;
   position: absolute;
+  z-index: 8;
 `;
 
 export const Container = styled.div`
@@ -20,11 +21,14 @@ export const Container = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
+  border-radius: 15px;
+  z-index: 9;
 `;
 
 export const Title = styled.h1`
   font-size: 18px;
   color: ${({ theme }) => theme.contrast};
+  line-height: 26px;
 `;
 
 export const ButtonContainer = styled.div`
@@ -38,7 +42,8 @@ export const ButtonContainer = styled.div`
     width: 80px;
     height: 36px;
     font-size: 14px;
-    border-radius: 80px;
+    border-radius: 8px;
+    background: none;
   }
 
   .submit {
@@ -47,7 +52,7 @@ export const ButtonContainer = styled.div`
 
     &:hover {
       background-color: ${palette.pinkMain};
-      color: ${({ theme }) => theme.contrast};
+      color: white;
     }
   }
 
@@ -57,7 +62,7 @@ export const ButtonContainer = styled.div`
 
     &:hover {
       background-color: ${palette.gray[200]};
-      color: ${({ theme }) => theme.contrast};
+      color: white;
     }
   }
 `;

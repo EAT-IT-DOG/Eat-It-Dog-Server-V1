@@ -8,7 +8,7 @@ const Modal = ({ isOpen, onClose, customStyle, children }: ModalProps) => {
       {isOpen && (
         <Portal selector="#modal">
           <S.Background onClick={onClose} />
-          <S.Container style={{ ...customStyle }}>{children}</S.Container>;
+          <S.Container style={{ ...customStyle }}>{children}</S.Container>
         </Portal>
       )}
     </>

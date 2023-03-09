@@ -6,6 +6,7 @@ export const lightTheme: DefaultTheme = {
 
   backgroundColor: "#fafafa",
   subBackgroundColor: "#ffffff",
+  borderColor: "#DBDBDB",
   contrast: "#434343",
 };
 
@@ -14,5 +15,7 @@ export const darkTheme: DefaultTheme = {
 
   backgroundColor: "#181818",
   subBackgroundColor: "#202020",
+  borderColor: "#434343",
+
   contrast: "#ffffff",
 };

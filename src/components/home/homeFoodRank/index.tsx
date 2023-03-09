@@ -24,12 +24,6 @@ const item = [
   { rank: 16, content: "초코우유" },
   { rank: 17, content: "딸기우유" },
   { rank: 18, content: "사탕" },
-  { rank: 19, content: "열 글자부터 점 찍어보자 얘들아" },
-  { rank: 20, content: "초콜릿" },
-  { rank: 21, content: "브로콜리" },
-  { rank: 22, content: "초코우유" },
-  { rank: 23, content: "딸기우유" },
-  { rank: 24, content: "사탕" },
 ];
 
 const HomeFoodRank = () => {

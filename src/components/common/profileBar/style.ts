@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const ProfileBarContainer = styled.div`
-  min-width: 360px;
-  max-width: 360px;
+  min-width: 290px;
+  max-width: 290px;
   height: 100vh;
   background-color: ${({ theme }) => theme.subBackgroundColor};
   display: flex;
   flex-direction: column;
-  z-index: 2;
+  z-index: 10;
 `;

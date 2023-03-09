@@ -5,6 +5,7 @@ const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<P.homePage />} />
+      <Route path="/profile" element={<P.profilePage />} />
     </Routes>
   );
 };
