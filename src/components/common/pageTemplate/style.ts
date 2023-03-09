@@ -12,8 +12,7 @@ export const PageTemplateWrap = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 89px 100px;
-  box-sizing: border-box;
+  padding: 40px 50px;
 `;
 
 export const PageTemplateHeaderWrap = styled.div`

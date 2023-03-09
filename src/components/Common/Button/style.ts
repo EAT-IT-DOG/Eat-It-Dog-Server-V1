@@ -7,6 +7,7 @@ export const Container = styled.button<{ buttonType: ButtonType }>`
   height: 36px;
   font-size: 14px;
   border-radius: 80px;
+  background: none;
 
   ${({ buttonType }) =>
     buttonType === "Submit"
@@ -16,7 +17,7 @@ export const Container = styled.button<{ buttonType: ButtonType }>`
 
           &:hover {
             background-color: ${palette.pinkMain};
-            color: ${({ theme }) => theme.contrast};
+            color: white;
           }
         `
       : css`
@@ -24,7 +25,7 @@ export const Container = styled.button<{ buttonType: ButtonType }>`
           color: ${palette.gray[200]};
 
           &:hover {
-            color: ${({ theme }) => theme.contrast};
+            color: white;
             background-color: ${palette.gray[200]};
           }
         `}

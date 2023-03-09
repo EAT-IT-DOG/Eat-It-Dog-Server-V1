@@ -4,7 +4,7 @@ import {
   SearchBarSubmitButton,
   SearchBarSubmitButtonIcon,
 } from "./style";
-import { BiSearch } from "react-icons/bi";
+import { BiSearch } from "@react-icons/all-files/bi/BiSearch";
 
 const SearchBar = () => {
   return (

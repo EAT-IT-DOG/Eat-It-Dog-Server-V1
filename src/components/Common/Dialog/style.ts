@@ -8,6 +8,7 @@ export const Background = styled.div`
   top: 0px;
   left: 0px;
   position: absolute;
+  z-index: 8;
 `;
 
 export const Container = styled.div`
@@ -21,6 +22,9 @@ export const Container = styled.div`
   transform: translate(-50%, -50%);
   position: absolute;
   background-color: ${({ theme }) => theme.subBackgroundColor};
+  border-radius: 15px;
+  z-index: 9;
+  height: 60px;
 `;
 
 export const Text = styled.p`
@@ -32,14 +36,14 @@ export const ButtonsContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: auto;
   column-gap: 14px;
 
   button {
     width: 80px;
     height: 36px;
     font-size: 14px;
-    border-radius: 80px;
+    border-radius: 8px;
+    background: none;
   }
 
   .submit {
@@ -48,7 +52,7 @@ export const ButtonsContainer = styled.div`
 
     &:hover {
       background-color: ${palette.pinkMain};
-      color: ${({ theme }) => theme.contrast};
+      color: white;
     }
   }
 
@@ -58,7 +62,7 @@ export const ButtonsContainer = styled.div`
 
     &:hover {
       background-color: ${palette.gray[200]};
-      color: ${({ theme }) => theme.contrast};
+      color: white;
     }
   }
 `;

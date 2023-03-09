@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HomeFoodRankContainer = styled.div`
-  width: 828px;
+  width: 580px;
   height: 358px;
   padding: 40px;
   background-color: ${({ theme }) => theme.subBackgroundColor};
