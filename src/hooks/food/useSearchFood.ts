@@ -16,7 +16,9 @@ const useSearchFood = () => {
 
     e.preventDefault();
 
-    navigate(`/search?keyword=${keyword}`);
+    navigate(`/search/${keyword}`);
+
+    setKeyword("");
   };
 
   return {

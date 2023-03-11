@@ -21,14 +21,16 @@ const NavBar = () => {
       <NavBarTitle>먹어보시개</NavBarTitle>
       <NavBarSectionWrap>
         {NAVBAR_SECTION_ITEMS.map((sectionItem) => (
-          <NavBarSectionItemWrap selected={sectionItem.link === pathname}>
+          <NavBarSectionItemWrap selected={sectionItem.selector === pathname}>
             <NavBarSectionItem
-              selected={sectionItem.link === pathname}
+              selected={sectionItem.selector === pathname}
               onClick={() => {
                 navigate(sectionItem.link);
               }}
             >
-              <NavBarSectionItemIcon selected={sectionItem.link === pathname}>
+              <NavBarSectionItemIcon
+                selected={sectionItem.selector === pathname}
+              >
                 <sectionItem.icon />
               </NavBarSectionItemIcon>
               {sectionItem.sectionName}

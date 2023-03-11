@@ -7,12 +7,13 @@ import * as S from "./style";
 
 const FoodDetail = () => {
   const { name } = useParams();
-  const { data: serverFoodData } = useGetFoodByName({ name: name || "" });
-
-  console.log(serverFoodData);
+  const { data: serverFoodData } = useGetFoodByName(
+    { name: name || "" },
+    { suspense: true }
+  );
 
   return (
-    <Flex direction="column" gap={40}>
+    <S.Container>
       <Flex justify="between" align="center">
         <S.FoodName>{serverFoodData?.name}</S.FoodName>
         {serverFoodData && (
@@ -27,6 +28,7 @@ const FoodDetail = () => {
           </S.Content>
         )}
       </div>
+
       {serverFoodData?.eatingMethod && (
         <div>
           <S.SubTitle>급여 방법</S.SubTitle>
@@ -34,7 +36,12 @@ const FoodDetail = () => {
         </div>
       )}
 
-      {}
+      {serverFoodData?.benefit && (
+        <div>
+          <S.SubTitle>주성분 및 기능</S.SubTitle>
+          <S.Content>{serverFoodData.benefit}</S.Content>
+        </div>
+      )}
 
       {serverFoodData?.symptom && (
         <div>
@@ -42,7 +49,14 @@ const FoodDetail = () => {
           <S.Content>{serverFoodData.symptom}</S.Content>
         </div>
       )}
-    </Flex>
+
+      {serverFoodData?.caution && (
+        <div>
+          <S.SubTitle>유의 사항</S.SubTitle>
+          <S.Content>{serverFoodData.caution}</S.Content>
+        </div>
+      )}
+    </S.Container>
   );
 };
 

@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 import { useLocation, useParams } from "react-router-dom";
 import { useGetFoodByName } from "../../queries/food/food.query";
 import { queryStringParser } from "../../utils/queryStringParser";
@@ -12,18 +13,22 @@ const Search = () => {
   const { search } = useLocation();
   const { name } = useParams();
 
-  const { data: serverFoodData, isError } = useGetFoodByName({
-    name: search && queryStringParser(search).keyword,
-  });
-
   return (
     <>
       <FoodTypeList />
       <S.Container>
-        <Suspense fallback={<>로딩중...</>}>
-          {search && queryStringParser(search).type && <FoodList />}
-        </Suspense>
-        <Suspense fallback={<>로딩중...</>}>{name && <FoodDetail />}</Suspense>
+        {search && (
+          <Suspense fallback={<>로딩중...</>}>
+            <FoodList />
+          </Suspense>
+        )}
+        {name && (
+          <ErrorBoundary key={name} FallbackComponent={FoodNotFound}>
+            <Suspense fallback={<>로딩중...</>}>
+              <FoodDetail />
+            </Suspense>
+          </ErrorBoundary>
+        )}
       </S.Container>
     </>
   );

@@ -10,9 +10,14 @@ const FoodList = () => {
 
   const navigate = useNavigate();
 
-  const { data: serverFoodNamesData } = useGetFoodNamesByType({
-    type: search && queryStringParser(search).type,
-  });
+  const { data: serverFoodNamesData } = useGetFoodNamesByType(
+    {
+      type: search && queryStringParser(search).type,
+    },
+    {
+      suspense: true,
+    }
+  );
 
   return (
     <>
