@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
+import { FoodTypeKorean } from "../../../../types/food/food.type";
 import {
   HomeFoodCarouselItemContainer,
   HomeFoodCarouselItemDescription,
+  HomeFoodCarouselItemIcon,
   HomeFoodCarouselItemIconWrap,
   HomeFoodCarouselItemTextWrap,
   HomeFoodCarouselItemTitle,
@@ -8,26 +11,33 @@ import {
 
 interface Props {
   backgroundColor: string;
-  title: string;
+  type: string;
   description: string;
-  icon: JSX.Element;
+  icon: string;
 }
 
 const HomeFoodCarouselItem = ({
   backgroundColor,
-  title,
+  type,
   description,
   icon,
 }: Props) => {
+  const navigate = useNavigate();
+
   return (
-    <HomeFoodCarouselItemContainer style={{ backgroundColor }}>
-      <HomeFoodCarouselItemIconWrap background={backgroundColor}>
-        {icon}
+    <HomeFoodCarouselItemContainer
+      backgroundColor={backgroundColor}
+      onClick={() => navigate(`/search?type=${type}`)}
+    >
+      <HomeFoodCarouselItemIconWrap backgroundColor={backgroundColor}>
+        <HomeFoodCarouselItemIcon src={icon} />
       </HomeFoodCarouselItemIconWrap>
       <HomeFoodCarouselItemTextWrap>
-        <HomeFoodCarouselItemTitle>{title}</HomeFoodCarouselItemTitle>
+        <HomeFoodCarouselItemTitle>
+          {FoodTypeKorean[type]}
+        </HomeFoodCarouselItemTitle>
         <HomeFoodCarouselItemDescription>
-          {description}
+          {description} 등
         </HomeFoodCarouselItemDescription>
       </HomeFoodCarouselItemTextWrap>
     </HomeFoodCarouselItemContainer>

@@ -16,8 +16,8 @@ export const FlexContainer = styled.div<{
 }>`
   display: flex;
   ${({ gap }) => gap && `gap: ${gap}px;`}
-  ${({ justify }) => justify && `justify-content: ${FlexJustify[justify]}`}
-  ${({ align }) => align && `align-items: ${FlexAlign[align]}`}
+  ${({ justify }) => justify && `justify-content: ${FlexJustify[justify]};`}
+  ${({ align }) => align && `align-items: ${FlexAlign[align]};`}
   ${({ direction }) =>
-    direction && `flex-direction: ${FlexDirection[direction]}`}
+    direction && `flex-direction: ${FlexDirection[direction]};`}
 `;

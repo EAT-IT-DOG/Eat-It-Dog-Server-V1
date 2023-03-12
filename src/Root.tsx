@@ -6,7 +6,13 @@ import App from "./components/App";
 import PageTemplate from "./components/Common/PageTemplate";
 import ThemeProviderContainer from "./components/Common/ThemeProviderContainer";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+    },
+  },
+});
 
 const Root = () => {
   return (

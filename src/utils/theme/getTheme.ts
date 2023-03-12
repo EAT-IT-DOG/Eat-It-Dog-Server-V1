@@ -1,9 +1,9 @@
 import { THEME_KEY } from "../../constants/theme/theme.constant";
 import { ETheme } from "../../enum/theme/theme.enum";
-import cookie from "../../lib/cookie/cookie";
+import Cookie from "../../lib/storage/Cookie";
 
 export const getTheme = (): ETheme => {
-  const themeMode = cookie.getCookie(THEME_KEY);
+  const themeMode = Cookie.get(THEME_KEY);
 
   if (typeof window !== "undefined" && themeMode === null) {
     const isDarkTheme: boolean = window.matchMedia(

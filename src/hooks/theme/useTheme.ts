@@ -3,7 +3,7 @@ import { useRecoilState } from "recoil";
 import { DefaultTheme } from "styled-components";
 import { THEME_KEY } from "../../constants/theme/theme.constant";
 import { ETheme } from "../../enum/theme/theme.enum";
-import cookie from "../../lib/cookie/cookie";
+import Cookie from "../../lib/storage/Cookie";
 import { themeModeAtom } from "../../store/theme/themeStore";
 import { darkTheme, lightTheme } from "../../style/theme";
 
@@ -18,7 +18,7 @@ const useTheme = () => {
 
   const handleTheme = useCallback((): void => {
     const switchTheme = currentTheme === DARK ? LIGHT : DARK;
-    cookie.setCookie(THEME_KEY, String(switchTheme));
+    Cookie.set(THEME_KEY, String(switchTheme));
     setCurrentTheme(switchTheme);
   }, [DARK, LIGHT, currentTheme, setCurrentTheme]);
 

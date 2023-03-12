@@ -5,7 +5,7 @@ import {
 } from "./style";
 
 interface Props {
-  rank: string;
+  rank: number;
   content: string;
 }
 
