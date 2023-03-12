@@ -11,6 +11,7 @@ export const HomeFoodRankItemContainer = styled.div`
 `;
 
 export const HomeFoodRankItemRank = styled.h1`
+  min-width: 16px;
   font-size: 16px;
   font-weight: bold;
   color: ${({ theme }) => theme.contrast};

@@ -21,7 +21,10 @@ const NavBar = () => {
       <NavBarTitle>먹어보시개</NavBarTitle>
       <NavBarSectionWrap>
         {NAVBAR_SECTION_ITEMS.map((sectionItem) => (
-          <NavBarSectionItemWrap selected={sectionItem.selector === pathname}>
+          <NavBarSectionItemWrap
+            selected={sectionItem.selector === pathname}
+            key={sectionItem.sectionName}
+          >
             <NavBarSectionItem
               selected={sectionItem.selector === pathname}
               onClick={() => {
@@ -38,12 +41,12 @@ const NavBar = () => {
           </NavBarSectionItemWrap>
         ))}
       </NavBarSectionWrap>
-      <NavBarLogOutBtn>
+      {/* <NavBarLogOutBtn>
         <NavBarLogOutIcon>
           <FiLogOut />
         </NavBarLogOutIcon>
         로그아웃
-      </NavBarLogOutBtn>
+      </NavBarLogOutBtn> */}
     </NavBarContainer>
   );
 };

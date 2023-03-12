@@ -1,23 +1,12 @@
 import { useMemo } from "react";
 import Slider from "react-slick";
-import { palette } from "../../../style/palette";
+import { HOME_FOOD_TYPES_ITEM } from "../../../constants/home/home.constant";
+import { FoodSafenessColor } from "../../../constants/search/search.constant";
+import { FoodSafeness } from "../../../types/food/food.type";
 import HomeFoodCarouselItem from "./homeFoodCarouselItem";
 import { HomeFoodCarouselContainer, HoomFoodCarouelWrap } from "./style";
 
-const data = [
-  { icon: <></>, title: "유제품", description: "우유,요거트 등" },
-  { icon: <></>, title: "간식", description: "초콜렛,사탕 등" },
-  { icon: <></>, title: "육류", description: "육회,소고기 등" },
-  { icon: <></>, title: "육류", description: "육회,소고기 등" },
-  { icon: <></>, title: "육류", description: "육회,소고기 등" },
-  { icon: <></>, title: "육류", description: "육회,소고기 등" },
-  { icon: <></>, title: "육류", description: "육회,소고기 등" },
-  { icon: <></>, title: "육류", description: "육회,소고기 등" },
-  { icon: <></>, title: "육류", description: "육회,소고기 등" },
-];
-
 const HomeFoodCarousel = () => {
-  const colorList = [palette.greenMain, palette.yellowMain, palette.pinkMain];
   const homeFoodCarouselSetting = useMemo(
     () => ({
       dots: true,
@@ -46,12 +35,13 @@ const HomeFoodCarousel = () => {
     <HomeFoodCarouselContainer>
       <HoomFoodCarouelWrap>
         <Slider {...homeFoodCarouselSetting}>
-          {data.map((item, idx) => (
+          {HOME_FOOD_TYPES_ITEM.map((item) => (
             <HomeFoodCarouselItem
-              backgroundColor={colorList[idx % 3]}
-              title={item.title}
+              backgroundColor={FoodSafenessColor[item.safeness as FoodSafeness]}
+              type={item.type}
               description={item.description}
               icon={item.icon}
+              key={item.type}
             />
           ))}
         </Slider>

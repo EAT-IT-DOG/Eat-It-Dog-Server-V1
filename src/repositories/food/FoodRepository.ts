@@ -4,6 +4,10 @@ export interface FoodRepository {
   getFoodNamesByType({ type }: getFoodNamesByTypeParam): Promise<FoodName[]>;
 
   getFoodByName({ name }: getFoodByNameParam): Promise<Food>;
+
+  getFoodNamesBySearchCount(): Promise<FoodName[]>;
+
+  getRandomFood(): Promise<Food>;
 }
 
 export interface getFoodNamesByTypeParam {

@@ -46,3 +46,30 @@ export const useGetFoodByName = (
       ...options,
     }
   );
+
+export const useGetFoodNamesBySearch = (
+  options?: UseQueryOptions<
+    FoodName[],
+    AxiosError,
+    FoodName[],
+    "food/getFoodNamesBySearch"
+  >
+) =>
+  useQuery(
+    "food/getFoodNamesBySearch",
+    () => FoodRepositoryImpl.getFoodNamesBySearchCount(),
+    {
+      cacheTime: 1000 * 60 * 2,
+      staleTime: 1000 * 60,
+      ...options,
+    }
+  );
+
+export const useGetRandomFood = (
+  options?: UseQueryOptions<Food, AxiosError, Food, "food/getRandomFood">
+) =>
+  useQuery("food/getRandomFood", () => FoodRepositoryImpl.getRandomFood(), {
+    cacheTime: 1000 * 60 * 2,
+    staleTime: 1000 * 60,
+    ...options,
+  });

@@ -12,7 +12,7 @@ export type FoodType =
 export const FoodTypeKorean: Record<string, string> = {
   DRINK: "음료",
   FRUIT: "과일",
-  JUNK_FOOD: "인스턴드",
+  JUNK_FOOD: "인스턴트",
   MEAT: "육류",
   MILK_PRODUCT: "유제품",
   SEAFOOD: "해산물",

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const HomeFoodCarouselItemContainer = styled.div`
+export const HomeFoodCarouselItemContainer = styled.div<{
+  backgroundColor: string;
+}>`
   width: 250px;
   height: 100px;
   border-radius: 15px;
@@ -10,17 +12,31 @@ export const HomeFoodCarouselItemContainer = styled.div`
   justify-content: space-between;
   column-gap: 24px;
   cursor: pointer;
+  background-color: ${({ backgroundColor }) => backgroundColor};
+  border: 1px solid ${({ backgroundColor }) => backgroundColor};
+
+  &:hover {
+    background: none;
+  }
 `;
 
-export const HomeFoodCarouselItemIconWrap = styled.div<{ background: string }>`
+export const HomeFoodCarouselItemIconWrap = styled.div<{
+  backgroundColor: string;
+}>`
   min-width: 48px;
   height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 15px;
-  background-color: ${({ background }) => background};
-  filter: brightness(80%);
+  background-color: ${({ backgroundColor }) => backgroundColor};
+  filter: brightness(90%);
+`;
+
+export const HomeFoodCarouselItemIcon = styled.img`
+  width: 24px;
+  height: 24px;
+  object-fit: scale-down;
 `;
 
 export const HomeFoodCarouselItemTextWrap = styled.div`
@@ -35,10 +51,18 @@ export const HomeFoodCarouselItemTitle = styled.h1`
   font-size: 14px;
   color: white;
   line-height: 20px;
+
+  ${HomeFoodCarouselItemContainer}:hover & {
+    color: ${({ theme }) => theme.contrast};
+  }
 `;
 
 export const HomeFoodCarouselItemDescription = styled.span`
   font-size: 14px;
   color: white;
   line-height: 17px;
+
+  ${HomeFoodCarouselItemContainer}:hover & {
+    color: ${({ theme }) => theme.contrast};
+  }
 `;
