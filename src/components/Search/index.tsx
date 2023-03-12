@@ -1,8 +1,7 @@
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { useLocation, useParams } from "react-router-dom";
-import { useGetFoodByName } from "../../queries/food/food.query";
-import { queryStringParser } from "../../utils/queryStringParser";
+
 import FoodDetail from "./FoodDetail";
 import FoodList from "./FoodList";
 import FoodNotFound from "./FoodNotFound";
