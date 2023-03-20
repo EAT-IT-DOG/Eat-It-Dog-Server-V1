@@ -17,6 +17,7 @@ export const NavBarTitle = styled.h1`
   font-size: 20px;
   color: ${({ theme }) => theme.contrast};
   font-weight: 700;
+  cursor: pointer;
 `;
 
 export const NavBarSectionWrap = styled.div`

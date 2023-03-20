@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import { HOME_FOOD_TYPES_ITEM } from "../../../constants/home/home.constant";
 import { FoodSafenessColor } from "../../../constants/search/search.constant";
 import { FoodSafeness } from "../../../types/food/food.type";
-import HomeFoodCarouselItem from "./homeFoodCarouselItem";
+import HomeFoodCarouselItem from "./HomeFoodCarouselItem";
 import { HomeFoodCarouselContainer, HoomFoodCarouelWrap } from "./style";
 
 const HomeFoodCarousel = () => {

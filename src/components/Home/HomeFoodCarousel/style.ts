@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { palette } from "../../../style/palette";
 
 export const HomeFoodCarouselContainer = styled.div`
   margin-top: 50px;
@@ -39,7 +40,7 @@ export const HoomFoodCarouelWrap = styled.div`
     column-gap: 15px;
 
     .slick-active {
-      background-color: #bcbcbc;
+      background-color: ${palette.gray[400]};
     }
 
     li {
@@ -55,7 +56,7 @@ export const HoomFoodCarouelWrap = styled.div`
       justify-content: center;
 
       &:hover {
-        background-color: #bcbcbc;
+        background-color: ${palette.gray[400]};
       }
 
       button {

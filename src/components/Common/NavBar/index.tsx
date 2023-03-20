@@ -18,7 +18,7 @@ const NavBar = () => {
 
   return (
     <NavBarContainer>
-      <NavBarTitle>먹어보시개</NavBarTitle>
+      <NavBarTitle onClick={() => navigate("/")}>먹어보시개</NavBarTitle>
       <NavBarSectionWrap>
         {NAVBAR_SECTION_ITEMS.map((sectionItem) => (
           <NavBarSectionItemWrap

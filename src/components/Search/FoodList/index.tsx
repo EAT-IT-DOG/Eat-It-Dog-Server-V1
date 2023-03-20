@@ -3,6 +3,7 @@ import { useGetFoodNamesByType } from "../../../queries/food/food.query";
 import { FoodTypeKorean } from "../../../types/food/food.type";
 import { queryStringParser } from "../../../utils/queryStringParser";
 import SafenessLabel from "../../Common/SafenessLabel";
+import FoodNotFound from "../FoodNotFound";
 import * as S from "./style";
 
 const FoodList = () => {
@@ -26,19 +27,23 @@ const FoodList = () => {
         <SafenessLabel safenessType="NORMAL" />
         <SafenessLabel safenessType="DANGEROUS" />
       </S.SafenessWrap>
-      <S.ItemWrap>
-        {serverFoodNamesData?.map((foodName) => (
-          <S.FoodItem
-            safenessType={foodName.safeness}
-            onClick={() => navigate(`/search/${foodName.name}`)}
-          >
-            <S.FoodItemTitle>{foodName.name}</S.FoodItemTitle>
-            <S.FoodItemType>
-              #{FoodTypeKorean[queryStringParser(search).type]}
-            </S.FoodItemType>
-          </S.FoodItem>
-        ))}
-      </S.ItemWrap>
+      {serverFoodNamesData?.length === 0 ? (
+        <FoodNotFound />
+      ) : (
+        <S.ItemWrap>
+          {serverFoodNamesData?.map((foodName) => (
+            <S.FoodItem
+              safenessType={foodName.safeness}
+              onClick={() => navigate(`/search/${foodName.name}`)}
+            >
+              <S.FoodItemTitle>{foodName.name}</S.FoodItemTitle>
+              <S.FoodItemType>
+                #{FoodTypeKorean[queryStringParser(search).type]}
+              </S.FoodItemType>
+            </S.FoodItem>
+          ))}
+        </S.ItemWrap>
+      )}
     </>
   );
 };
