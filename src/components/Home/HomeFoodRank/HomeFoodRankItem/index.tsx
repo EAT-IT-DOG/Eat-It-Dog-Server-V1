@@ -1,19 +1,24 @@
+import { useNavigate } from "react-router-dom";
 import {
   HomeFoodRankItemContainer,
-  HomeFoodRankItemContent,
+  HomeFoodRankItemName,
   HomeFoodRankItemRank,
 } from "./style";
 
 interface Props {
   rank: number;
-  content: string;
+  name: string;
 }
 
-const HomeFoodRankItem = ({ rank, content }: Props) => {
+const HomeFoodRankItem = ({ rank, name }: Props) => {
+  const navigate = useNavigate();
+
   return (
     <HomeFoodRankItemContainer>
       <HomeFoodRankItemRank>{rank}</HomeFoodRankItemRank>
-      <HomeFoodRankItemContent>{content}</HomeFoodRankItemContent>
+      <HomeFoodRankItemName onClick={() => navigate(`/search/${name}`)}>
+        {name}
+      </HomeFoodRankItemName>
     </HomeFoodRankItemContainer>
   );
 };

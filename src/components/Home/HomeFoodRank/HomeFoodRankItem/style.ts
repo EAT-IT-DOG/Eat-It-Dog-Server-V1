@@ -17,10 +17,15 @@ export const HomeFoodRankItemRank = styled.h1`
   color: ${({ theme }) => theme.contrast};
 `;
 
-export const HomeFoodRankItemContent = styled.p`
+export const HomeFoodRankItemName = styled.p`
   width: 100%;
   font-size: 14px;
   color: ${({ theme }) => theme.contrast};
   text-align: start;
   ${widthOverflowEllipsisLine}
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;

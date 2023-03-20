@@ -8,8 +8,8 @@ const HomeFoodRankingList = () => {
 
   return (
     <>
-      {serverFoodNamesData?.map((foodNames, idx) => (
-        <HomeFoodRankItem rank={idx + 1} content={foodNames.name} />
+      {serverFoodNamesData?.map(({ name }, idx) => (
+        <HomeFoodRankItem rank={idx + 1} name={name} />
       ))}
     </>
   );
