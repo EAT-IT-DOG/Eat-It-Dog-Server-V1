@@ -1,6 +1,8 @@
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { useLocation, useParams } from "react-router-dom";
+import SearchFoodDetailFallback from "../Common/FallbackLoader/SearchFoodDetailFallbackLoader";
+import SearchFoodListFallbackLoader from "../Common/FallbackLoader/SearchFoodList";
 
 import FoodDetail from "./FoodDetail";
 import FoodList from "./FoodList";
@@ -17,13 +19,15 @@ const Search = () => {
       <FoodTypeList />
       <S.Container>
         {search && (
-          <Suspense fallback={<>로딩중...</>}>
-            <FoodList />
-          </Suspense>
+          <ErrorBoundary key={search} FallbackComponent={FoodNotFound}>
+            <Suspense fallback={<SearchFoodListFallbackLoader />}>
+              <FoodList />
+            </Suspense>
+          </ErrorBoundary>
         )}
         {name && (
           <ErrorBoundary key={name} FallbackComponent={FoodNotFound}>
-            <Suspense fallback={<>로딩중...</>}>
+            <Suspense fallback={<SearchFoodDetailFallback />}>
               <FoodDetail />
             </Suspense>
           </ErrorBoundary>

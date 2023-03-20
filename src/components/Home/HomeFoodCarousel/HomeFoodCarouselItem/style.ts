@@ -45,24 +45,19 @@ export const HomeFoodCarouselItemTextWrap = styled.div`
   flex-direction: column;
   align-items: flex-start;
   row-gap: 4px;
+  color: white;
+
+  ${HomeFoodCarouselItemContainer}:hover & {
+    color: ${({ theme }) => theme.contrast};
+  }
 `;
 
 export const HomeFoodCarouselItemTitle = styled.h1`
   font-size: 14px;
-  color: white;
   line-height: 20px;
-
-  ${HomeFoodCarouselItemContainer}:hover & {
-    color: ${({ theme }) => theme.contrast};
-  }
 `;
 
 export const HomeFoodCarouselItemDescription = styled.span`
   font-size: 14px;
-  color: white;
   line-height: 17px;
-
-  ${HomeFoodCarouselItemContainer}:hover & {
-    color: ${({ theme }) => theme.contrast};
-  }
 `;
